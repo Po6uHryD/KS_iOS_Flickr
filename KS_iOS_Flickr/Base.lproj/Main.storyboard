@@ -9,16 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cameras View Controller-->
         <scene sceneID="1Wg-Uf-hy1">
             <objects>
-                <viewController id="5nM-7c-m9I" sceneMemberID="viewController">
+                <viewController id="5nM-7c-m9I" customClass="CamerasViewController" customModule="KS_iOS_Flickr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8RM-1D-2dc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7wp-jP-prg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="rWc-QS-1ET"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-RH-Pkk">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rOW-gL-lyL" firstAttribute="bottom" secondItem="hMQ-RH-Pkk" secondAttribute="bottom" id="GCy-99-nqk"/>
+                            <constraint firstItem="hMQ-RH-Pkk" firstAttribute="leading" secondItem="rOW-gL-lyL" secondAttribute="leading" id="HW3-wS-ki0"/>
+                            <constraint firstItem="7wp-jP-prg" firstAttribute="trailing" secondItem="rOW-gL-lyL" secondAttribute="trailing" id="X7X-t7-diq"/>
+                            <constraint firstItem="rOW-gL-lyL" firstAttribute="trailing" secondItem="hMQ-RH-Pkk" secondAttribute="trailing" id="fto-a4-elC"/>
+                            <constraint firstItem="7wp-jP-prg" firstAttribute="leading" secondItem="rOW-gL-lyL" secondAttribute="leading" id="jgd-XZ-psa"/>
+                            <constraint firstItem="7wp-jP-prg" firstAttribute="top" secondItem="rOW-gL-lyL" secondAttribute="top" id="lQn-Pt-q86"/>
+                            <constraint firstItem="hMQ-RH-Pkk" firstAttribute="top" secondItem="7wp-jP-prg" secondAttribute="bottom" id="pF8-em-KJa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rOW-gL-lyL"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="7wp-jP-prg" id="lUm-Ug-ptg"/>
+                        <outlet property="tableView" destination="hMQ-RH-Pkk" id="uFP-He-wGR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULi-qW-AsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
