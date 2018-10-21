@@ -34,4 +34,7 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row % 2 == 0 ? 100 : 44
+    }
 }
