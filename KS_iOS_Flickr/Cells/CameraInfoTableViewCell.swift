@@ -10,6 +10,9 @@ import UIKit
 
 class CameraInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cameraImage: UIImageView!
+    @IBOutlet weak var cameraName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,7 @@ class CameraInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(camera: Camera) {
+        cameraName.text = camera.name.toString()
+    }
 }

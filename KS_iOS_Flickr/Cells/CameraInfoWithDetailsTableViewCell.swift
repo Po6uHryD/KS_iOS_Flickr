@@ -10,6 +10,13 @@ import UIKit
 
 class CameraInfoWithDetailsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cameraImage: UIImageView!
+    @IBOutlet weak var cameraName: UILabel!
+    @IBOutlet weak var megapixels: UILabel!
+    @IBOutlet weak var screensize: UILabel!
+    @IBOutlet weak var memorytype: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
