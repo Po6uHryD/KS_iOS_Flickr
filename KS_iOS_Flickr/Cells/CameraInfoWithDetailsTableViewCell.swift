@@ -28,4 +28,20 @@ class CameraInfoWithDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(camera: Camera) {
+        
+        if camera.images != nil, let imagePath = camera.images?.getPathLargeImage() {
+            let url = NSURL(string: imagePath)
+            let imgData = try? Data(contentsOf: url! as URL)
+            cameraImage.image = UIImage(data: imgData!)!
+        } else {
+            cameraImage.image = nil
+        }
+
+        cameraName.text = camera.name.toString()
+        megapixels.text = camera.details?.megapixels?.toString()
+        screensize.text = camera.details?.lcd_screen_size?.toString()
+        memorytype.text = camera.details?.memory_type?.toString()
+    }
+    
 }

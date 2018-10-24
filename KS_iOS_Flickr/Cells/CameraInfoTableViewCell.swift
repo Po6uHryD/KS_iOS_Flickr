@@ -24,7 +24,19 @@ class CameraInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(camera: Camera) {
+    // Метод заполнения ячейки таблицы данными - картинкой и текстом
+    func setData(_ camera: Camera) {
+        
+        if camera.images != nil, let imagePath = camera.images?.getPathSmallImage() {
+            let url = NSURL(string: imagePath)
+            let imgData = try? Data(contentsOf: url! as URL)
+            cameraImage.image = UIImage(data: imgData!)!
+        } else {
+            cameraImage.image = nil
+        }
         cameraName.text = camera.name.toString()
     }
+    
+    
+    
 }
