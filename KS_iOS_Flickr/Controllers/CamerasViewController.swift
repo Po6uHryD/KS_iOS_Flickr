@@ -9,7 +9,10 @@
 import UIKit
 import Alamofire
 
-class CamerasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class CamerasViewController: UIViewController,
+                            UITableViewDataSource,
+                            UITableViewDelegate,
+                            UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
